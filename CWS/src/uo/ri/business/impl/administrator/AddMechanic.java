@@ -1,4 +1,4 @@
-package uo.ri.business.administrator;
+package uo.ri.business.impl.administrator;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,17 +8,16 @@ import java.sql.SQLException;
 import alb.util.jdbc.Jdbc;
 import uo.ri.dto.MechanicDto;
 
-public class UpdateMechanic {
-	private static String SQL = "update TMechanics " + "set name = ?, surname = ? " + "where id = ?";
-	private MechanicDto m;
+public class AddMechanic {
+	private static String SQL = "insert into TMechanics(dni, name, surname) values (?, ?, ?)";
+	private MechanicDto m; 
 	
-	
-	public UpdateMechanic(MechanicDto m) {
+	public AddMechanic(MechanicDto m) {
 		this.m = m;
 	}
 
-
 	public void execute() {
+		
 		// Process
 		Connection c = null;
 		PreparedStatement pst = null;
@@ -28,9 +27,9 @@ public class UpdateMechanic {
 			c = Jdbc.getConnection();
 
 			pst = c.prepareStatement(SQL);
-			pst.setString(1, m.name);
-			pst.setString(2, m.surname);
-			pst.setLong(3, m.id);
+			pst.setString(1, m.dni);
+			pst.setString(2, m.name);
+			pst.setString(3, m.surname);
 
 			pst.executeUpdate();
 
@@ -39,6 +38,5 @@ public class UpdateMechanic {
 		} finally {
 			Jdbc.close(rs, pst, c);
 		}
-
 	}
 }
