@@ -1,4 +1,4 @@
-package uo.ri.business.dto;
+package uo.ri.dto;
 
 public class ClientDto {
 

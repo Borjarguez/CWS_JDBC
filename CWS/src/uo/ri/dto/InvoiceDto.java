@@ -1,4 +1,4 @@
-package uo.ri.business.dto;
+package uo.ri.dto;
 
 import java.util.Date;
 

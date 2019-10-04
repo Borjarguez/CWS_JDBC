@@ -1,4 +1,4 @@
-package uo.ri.business.dto;
+package uo.ri.dto;
 
 /**
  * An aggregated result of all vouchers of a client
