@@ -1,18 +1,16 @@
 package uo.ri.ui.util;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import alb.util.console.Console;
-import uo.ri.business.dto.BreakdownDto;
-import uo.ri.business.dto.ContractCategoryDto;
-import uo.ri.business.dto.ContractDto;
-import uo.ri.business.dto.ContractTypeDto;
-import uo.ri.business.dto.InvoiceDto;
-import uo.ri.business.dto.MechanicDto;
-import uo.ri.business.dto.PaymentMeanDto;
-import uo.ri.business.dto.PayrollDto;
+import uo.ri.dto.BreakdownDto;
+import uo.ri.dto.ContractCategoryDto;
+import uo.ri.dto.ContractDto;
+import uo.ri.dto.ContractTypeDto;
+import uo.ri.dto.InvoiceDto;
+import uo.ri.dto.MechanicDto;
+import uo.ri.dto.PaymentMeanDto;
+import uo.ri.dto.PayrollDto;
 
 public class Printer {
 
