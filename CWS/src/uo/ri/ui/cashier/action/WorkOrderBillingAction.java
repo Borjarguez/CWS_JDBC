@@ -1,55 +1,37 @@
 package uo.ri.ui.cashier.action;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import alb.util.console.Console;
-import alb.util.date.Dates;
-import alb.util.jdbc.Jdbc;
-import alb.util.math.Round;
 import alb.util.menu.Action;
+import uo.ri.business.InvoiceService;
+import uo.ri.business.impl.InvoiceServiceImpl;
 import uo.ri.common.BusinessException;
+import uo.ri.dto.InvoiceDto;
+import uo.ri.ui.util.Printer;
 
 public class WorkOrderBillingAction implements Action {
 
-	
-
-	private Connection connection;	
-	
 	@Override
 	public void execute() throws BusinessException {
 		List<Long> workOrderIds = new ArrayList<Long>();
-		
+
 		// type work order ids to be invoiced in the invoice
 		do {
 			Long id = Console.readLong("Type work order ids ? ");
 			workOrderIds.add(id);
-		} while ( nextWorkorder() );
-
-
-	}
-
-	private void displayInvoice(long numberInvoice, Date dateInvoice,
-			double totalInvoice, double vat, double totalConIva) {
+		} while (nextWorkorder());
 		
-		Console.printf("Invoice number: %d\n", numberInvoice);
-		Console.printf("\tDate: %1$td/%1$tm/%1$tY\n", dateInvoice);
-		Console.printf("\tAmount: %.2f €\n", totalInvoice);
-		Console.printf("\tVAT: %.1f %% \n", vat);
-		Console.printf("\tTotal (including VAT): %.2f €\n", totalConIva);
+		InvoiceService in = new InvoiceServiceImpl();
+		
+		InvoiceDto invoice = in.createInvoiceFor(workOrderIds);
+		Printer.printInvoice(invoice);
+
 	}
 
-	
-
-		return Dates.fromString("1/7/2012").before(dateInvoice) ? 21.0 : 18.0;
+	private boolean nextWorkorder() {
+		return Console.readString(" Any other workorder? (y/n) ").equalsIgnoreCase("y");
 	}
-
-	
-	
 
 }
