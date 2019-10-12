@@ -4,10 +4,10 @@ import java.util.List;
 
 import alb.util.console.Console;
 import alb.util.menu.Action;
-import uo.ri.business.MechanicCrudService;
-import uo.ri.business.impl.MechanicCrudServiceImpl;
+import uo.ri.business.ServiceLayer.MechanicCrudService;
+import uo.ri.business.dto.MechanicDto;
 import uo.ri.common.BusinessException;
-import uo.ri.dto.MechanicDto;
+import uo.ri.conf.ServiceFactory;
 import uo.ri.ui.util.Printer;
 
 public class ListMechanicsAction implements Action {
@@ -17,7 +17,7 @@ public class ListMechanicsAction implements Action {
 
 		Console.println("\nList of mechanics \n");
 		
-		MechanicCrudService mcd = new MechanicCrudServiceImpl();
+		MechanicCrudService mcd = ServiceFactory.getMechanicCrudService();
 		List<MechanicDto> list = mcd.findAllMechanics();
 		
 		for(MechanicDto m : list) {

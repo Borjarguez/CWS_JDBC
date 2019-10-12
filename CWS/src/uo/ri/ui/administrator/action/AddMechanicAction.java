@@ -2,10 +2,10 @@ package uo.ri.ui.administrator.action;
 
 import alb.util.console.Console;
 import alb.util.menu.Action;
-import uo.ri.business.MechanicCrudService;
-import uo.ri.business.impl.MechanicCrudServiceImpl;
+import uo.ri.business.ServiceLayer.MechanicCrudService;
+import uo.ri.business.dto.MechanicDto;
 import uo.ri.common.BusinessException;
-import uo.ri.dto.MechanicDto;
+import uo.ri.conf.ServiceFactory;
 
 public class AddMechanicAction implements Action {
 
@@ -18,7 +18,7 @@ public class AddMechanicAction implements Action {
 		m.name = Console.readString("Name"); 
 		m.surname = Console.readString("Surname");
 		
-		MechanicCrudService mcd = new MechanicCrudServiceImpl();
+		MechanicCrudService mcd = ServiceFactory.getMechanicCrudService();
 		mcd.addMechanic(m);
 		
 		// Print result

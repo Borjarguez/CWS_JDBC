@@ -5,10 +5,10 @@ import java.util.List;
 
 import alb.util.console.Console;
 import alb.util.menu.Action;
-import uo.ri.business.InvoiceService;
-import uo.ri.business.impl.InvoiceServiceImpl;
+import uo.ri.business.ServiceLayer.InvoiceService;
+import uo.ri.business.dto.InvoiceDto;
 import uo.ri.common.BusinessException;
-import uo.ri.dto.InvoiceDto;
+import uo.ri.conf.ServiceFactory;
 import uo.ri.ui.util.Printer;
 
 public class WorkOrderBillingAction implements Action {
@@ -23,7 +23,7 @@ public class WorkOrderBillingAction implements Action {
 			workOrderIds.add(id);
 		} while (nextWorkorder());
 		
-		InvoiceService in = new InvoiceServiceImpl();
+		InvoiceService in = ServiceFactory.getInvoiceService();
 		
 		InvoiceDto invoice = in.createInvoiceFor(workOrderIds);
 		Printer.printInvoice(invoice);
