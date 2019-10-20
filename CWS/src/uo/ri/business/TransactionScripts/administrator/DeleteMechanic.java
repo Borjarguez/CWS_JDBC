@@ -26,7 +26,6 @@ public class DeleteMechanic {
 				c.rollback();
 				throw new BusinessException("Mechanic already exists");
 			}
-
 			//////////////////////////////////////
 			
 			mg.delete(idMechanic);
