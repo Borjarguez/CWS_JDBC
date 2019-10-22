@@ -25,12 +25,12 @@ public class GenerateCertificate {
 
 	public int execute() throws BusinessException {
 		try (Connection c = Jdbc.getConnection()) {
-			
-			c.setAutoCommit(false);
 			mg.setConnection(c);
 			cgt.setConnection(c);
 			vtg.setConnection(c);
 			cag.setConnection(c);
+			cg.setConnection(c);
+			c.setAutoCommit(false);
 
 			// Different lists needed for the method
 			List<VehicleTypeDto> vehiclesTypes = vtg.findAll();
@@ -41,11 +41,10 @@ public class GenerateCertificate {
 
 			for (VehicleTypeDto v : vehiclesTypes) {
 				for (MechanicDto m : passedMehanics) {
-					if (!checkExistCertificate(m.id, v.id)) {
-						List<Long> courses_ids = findCoursesIDsByMechanicAndVehicleTypeIDs(v.id,m.id);
+					if (!cg.doesCertificateExist(m.id, v.id)) {
+						List<Long> courses_ids = cgt.findCourseByMechanicIdVehicleTypeId(v.id, m.id);
 						int totalHours = 0;
 						for (Long id : courses_ids) {
-							System.out.println(v.id +" "+m.id+" "+id);
 							totalHours += (cgt.findCourseByID(id).hours
 									* cgt.getPercentageByVehicleTypeID(id, v.id) / 100)
 									* cag.findAttendanceByCourseIDMechanicID(id, m.id).attendance / 100;
@@ -87,35 +86,6 @@ public class GenerateCertificate {
 			e.printStackTrace();
 		}
 
-	}
-
-	private List<Long> findCoursesIDsByMechanicAndVehicleTypeIDs(Long vehicleType_id, Long mechanic_id) {
-		
-		List<Long> ids = new ArrayList<Long>();
-		
-		try (Connection c = Jdbc.getConnection()) {
-			c.setAutoCommit(false);
-			cgt.setConnection(c);
-			ids = cgt.findCourseByMechanicIdVehicleTypeId(vehicleType_id, mechanic_id);
-			c.commit();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return ids;
-	}
-
-	private boolean checkExistCertificate(Long idMechanic, Long idVehicleType) {
-		try (Connection c = Jdbc.getConnection()) {
-			c.setAutoCommit(false);
-			cg.setConnection(c);
-
-			c.commit();
-			return cg.doesCertificateExist(idMechanic, idVehicleType);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return false;
 	}
 
 }

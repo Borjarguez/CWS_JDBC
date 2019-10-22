@@ -68,7 +68,6 @@ public class CourseGatewayImpl implements CourseGateway {
 				c.startDate = rs.getDate("startDate");
 				c.endDate = rs.getDate("endDate");
 			}
-
 			return c;
 
 		} catch (SQLException e) {
@@ -80,7 +79,6 @@ public class CourseGatewayImpl implements CourseGateway {
 	public int getPercentageByVehicleTypeID(Long course_id, Long vehicleType_id) {
 		PreparedStatement pst = null;
 		ResultSet rs = null;
-		
 		String SQL = Conf.getInstance().getProperty("SQL_FIND_COURSE_PERCENTAGE");
 
 		try {

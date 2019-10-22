@@ -33,6 +33,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="AlbUtil" />
+    <orderEntry type="module" module-name="AlbUtil" exported="" />
   </component>
 </module>
