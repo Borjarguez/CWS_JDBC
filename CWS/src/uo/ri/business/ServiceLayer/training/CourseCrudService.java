@@ -1,6 +1,7 @@
 package uo.ri.business.ServiceLayer.training;
 
 import java.util.List;
+import java.util.Optional;
 
 import uo.ri.business.dto.CourseDto;
 import uo.ri.business.dto.VehicleTypeDto;
@@ -91,5 +92,5 @@ public interface CourseCrudService {
 	 * DOES NOT @throws BusinessException
 	 * @throws BusinessException
 	 */
-	CourseDto findCourseById(Long cId) throws BusinessException;
+	Optional<CourseDto> findCourseById(Long cId) throws BusinessException;
 }

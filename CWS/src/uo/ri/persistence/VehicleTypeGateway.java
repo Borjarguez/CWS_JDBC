@@ -10,4 +10,6 @@ public interface VehicleTypeGateway {
 	void setConnection(Connection con);
 
 	List<VehicleTypeDto> findAll();
+	
+	VehicleTypeDto findByID(Long idVehicleType);
 }

@@ -20,4 +20,6 @@ public interface MechanicGateway {
 	MechanicDto findByID(Long idMechanic);
 
 	MechanicDto findByDNI(String dni);
+	
+	List<MechanicDto> findPassedMechanics();
 }

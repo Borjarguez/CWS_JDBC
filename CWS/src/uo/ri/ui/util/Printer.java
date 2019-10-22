@@ -4,13 +4,20 @@ import java.util.List;
 
 import alb.util.console.Console;
 import uo.ri.business.dto.BreakdownDto;
+import uo.ri.business.dto.CertificateDto;
 import uo.ri.business.dto.ContractCategoryDto;
 import uo.ri.business.dto.ContractDto;
 import uo.ri.business.dto.ContractTypeDto;
+import uo.ri.business.dto.CourseDto;
+import uo.ri.business.dto.EnrollmentDto;
 import uo.ri.business.dto.InvoiceDto;
 import uo.ri.business.dto.MechanicDto;
 import uo.ri.business.dto.PaymentMeanDto;
 import uo.ri.business.dto.PayrollDto;
+import uo.ri.business.dto.TrainingForMechanicRow;
+import uo.ri.business.dto.TrainingHoursRow;
+import uo.ri.business.dto.VehicleTypeDto;
+import uo.ri.business.dto.WorkOrderDto;
 
 public class Printer {
 
@@ -54,16 +61,6 @@ public class Printer {
 				, rep.date
 				, rep.status
 				, rep.total
-				);
-	}
-
-	public static void printMechanic(MechanicDto m) {
-
-		Console.printf("\t%d %-10.10s %-25.25s %-25.25s%n",  
-				m.id
-				, m.dni
-				, m.name
-				, m.surname
 				);
 	}
 
@@ -132,6 +129,87 @@ public class Printer {
 		Console.printf("Descuentos");
 		Console.printf("/t         IRPF: %7.2f%n", p.irpf);
 		Console.printf("/t    S. social: %7.2f%n", p.socialSecurity);
+	}
+
+	public static void printVehicleType(VehicleTypeDto vt) {
+
+		Console.printf("\t%d %-10.10s %5.2f %d\n"
+				, vt.id
+				, vt.name
+				, vt.pricePerHour
+				, vt.minTrainigHours
+			);
+	}
+
+	public static void printCourse(CourseDto c) {
+
+		Console.printf("%d\t%s %s %-35.35s %td/%<tm/%<tY %td/%<tm/%<tY %d\n"
+				, c.id
+				, c.code
+				, c.name
+				, c.description
+				, c.startDate
+				, c.endDate
+				, c.hours
+			);
+		c.percentages.forEach((id, percent) ->
+			Console.printf("\t %d %d percent\n", id, percent)
+		);
+	}
+
+	public static void printAttendingMechanic(EnrollmentDto att) {
+		Console.printf("%-30.30s\t%d\t%s\n"
+				, att.mechanic.surname + ", " + att.mechanic.name
+				, att.attendance
+				, att.passed ? "passed" : "failed"
+			);
+	}
+
+	public static void printTrainingForMechanic(TrainingForMechanicRow row) {
+
+		Console.printf("\t%-20.20s\t%d\t%d\n"
+					, row.vehicleTypeName
+					, row.enrolledHours
+					, row.attendedHours
+		);
+
+	}
+
+	public static void printTrainingHoursRow(TrainingHoursRow r) {
+
+		Console.printf("%-20.20s\t%-30.30s\t%d hours\n"
+				, r.vehicleTypeName
+				, r.mechanicFullName
+				, r.enrolledHours);
+	}
+
+	public static void printCertificateRow(CertificateDto r) {
+
+		Console.printf("%-20.20s\t%-30.30s\t from %td/%<tm/%<tY\n"
+				, r.vehicleType.name
+				, r.mechanic.surname + ", " + r.mechanic.name
+				, r.obtainedAt);
+	}
+	
+	public static void printWorkOrder(WorkOrderDto rep) {
+		
+		Console.printf("\t%d \t%-40.40s \t%td/%<tm/%<tY \t%-12.12s \t%.2f\n",  
+				rep.id
+				, rep.description 
+				, rep.date
+				, rep.status
+				, rep.total
+		);
+	}
+
+	public static void printMechanic(MechanicDto m) {
+
+		Console.printf("\t%d %-10.10s %-25.25s %-25.25s\n",  
+				m.id
+				, m.dni
+				, m.name
+				, m.surname
+			);
 	}
 
 }
