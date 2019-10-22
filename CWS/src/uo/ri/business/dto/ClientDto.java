@@ -3,6 +3,7 @@ package uo.ri.business.dto;
 public class ClientDto {
 
 	public Long id;
+
 	public String dni;
 	public String name;
 	public String surname;

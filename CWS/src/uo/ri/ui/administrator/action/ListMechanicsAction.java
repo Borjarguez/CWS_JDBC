@@ -4,7 +4,7 @@ import java.util.List;
 
 import alb.util.console.Console;
 import alb.util.menu.Action;
-import uo.ri.business.ServiceLayer.MechanicCrudService;
+import uo.ri.business.ServiceLayer.mechanic.MechanicCrudService;
 import uo.ri.business.dto.MechanicDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.ServiceFactory;
