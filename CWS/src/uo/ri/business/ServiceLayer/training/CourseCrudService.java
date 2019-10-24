@@ -1,11 +1,11 @@
 package uo.ri.business.ServiceLayer.training;
 
-import java.util.List;
-import java.util.Optional;
-
 import uo.ri.business.dto.CourseDto;
 import uo.ri.business.dto.VehicleTypeDto;
 import uo.ri.common.BusinessException;
+
+import java.util.List;
+import java.util.Optional;
 
 /**
  * This service is intended to be used by the Manager
@@ -41,7 +41,7 @@ public interface CourseCrudService {
 	 * The dedications of the course to the vehicle types are not modified
 	 * by this operation.
 	 *
-	 * @param dto. Must specify all the fields. The id and version fields must
+	 * @param dto Must specify all the fields. The id and version fields must
 	 * 	match the current state of the course. All the rest of fields must be
 	 * 	filled, even if there is no change in the data. So it must pass the same
 	 * 	validation as for new courses.

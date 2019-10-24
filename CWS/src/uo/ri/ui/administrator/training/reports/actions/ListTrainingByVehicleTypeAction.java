@@ -1,14 +1,14 @@
 package uo.ri.ui.administrator.training.reports.actions;
 
-import java.util.Comparator;
-import java.util.List;
-
 import alb.util.console.Console;
 import alb.util.menu.Action;
 import uo.ri.business.ServiceLayer.training.CourseReportService;
 import uo.ri.business.dto.TrainingHoursRow;
 import uo.ri.conf.ServiceFactory;
 import uo.ri.ui.util.Printer;
+
+import java.util.Comparator;
+import java.util.List;
 
 public class ListTrainingByVehicleTypeAction implements Action {
 

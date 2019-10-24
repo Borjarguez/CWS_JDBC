@@ -1,9 +1,9 @@
 package uo.ri.persistence;
 
+import uo.ri.business.dto.MechanicDto;
+
 import java.sql.Connection;
 import java.util.List;
-
-import uo.ri.business.dto.MechanicDto;
 
 public interface MechanicGateway {
 	

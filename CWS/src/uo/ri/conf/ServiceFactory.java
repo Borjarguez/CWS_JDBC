@@ -12,6 +12,10 @@ import uo.ri.business.ServiceLayer.training.impl.CertificateServiceImpl;
 import uo.ri.business.ServiceLayer.training.impl.CourseAttendanceServiceImpl;
 import uo.ri.business.ServiceLayer.training.impl.CourseCrudServiceImpl;
 import uo.ri.business.ServiceLayer.training.impl.CourseReportServiceImpl;
+import uo.ri.business.ServiceLayer.vehicle.VehicleCrudService;
+import uo.ri.business.ServiceLayer.vehicle.impl.VehicleCrudServiceImpl;
+import uo.ri.business.ServiceLayer.workOrder.WorkOrderService;
+import uo.ri.business.ServiceLayer.workOrder.impl.WorkOrderServiceImpl;
 
 public class ServiceFactory {
 	
@@ -38,4 +42,8 @@ public class ServiceFactory {
 	public static CourseReportService getCourseReportService() {
 		return new CourseReportServiceImpl();
 	}
+
+    public static WorkOrderService getWorkOrderService() { return new WorkOrderServiceImpl(); }
+
+	public static VehicleCrudService getVehicleCrudService() { return new VehicleCrudServiceImpl();	}
 }

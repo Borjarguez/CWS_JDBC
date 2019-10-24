@@ -16,4 +16,6 @@ public interface CourseGateway {
     int getPercentageByVehicleTypeID(Long course_id, Long vehicleType_id);
 
     int getAttendanceByVehicleTypeID(Long course_id, Long mechanic_id);
+
+    List<CourseDto> findAll();
 }

@@ -1,11 +1,11 @@
 package uo.ri.business.ServiceLayer.workOrder;
 
-import java.util.List;
-import java.util.Optional;
-
 import uo.ri.business.dto.CertificateDto;
 import uo.ri.business.dto.WorkOrderDto;
 import uo.ri.common.BusinessException;
+
+import java.util.List;
+import java.util.Optional;
 
 /**
  * This service is intended to be used by the Foreman
@@ -21,7 +21,7 @@ public interface WorkOrderService {
 	 * The rest of fields will assigned by the service, thus any provided value
 	 * will be ignored.
 	 *
-	 * @param dto. Just vehicle id and description.
+	 * @param dto Just vehicle id and description.
 	 *
 	 * @return another dto with the provided values and service-assigned
 	 * 		fields filled: id, date and status

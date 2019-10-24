@@ -1,16 +1,16 @@
 package uo.ri.persistence.impl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-
 import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.InvoiceDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.Conf;
 import uo.ri.persistence.InvoiceGateway;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
 
 public class InvoiceGatewayImpl implements InvoiceGateway {
 	private Connection c;

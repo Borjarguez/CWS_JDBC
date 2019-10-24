@@ -1,9 +1,5 @@
 package uo.ri.ui.administrator.training.course.actions;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
 import alb.util.console.Console;
 import alb.util.date.Dates;
 import uo.ri.business.ServiceLayer.training.CourseCrudService;
@@ -12,6 +8,10 @@ import uo.ri.business.dto.VehicleTypeDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.ServiceFactory;
 import uo.ri.ui.util.Printer;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Asks the user for basic data about a course through the console

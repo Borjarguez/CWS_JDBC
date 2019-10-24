@@ -1,12 +1,12 @@
 package uo.ri.business.ServiceLayer.training.impl;
 
-import java.util.List;
-import java.util.Optional;
-
 import uo.ri.business.ServiceLayer.training.CourseCrudService;
 import uo.ri.business.dto.CourseDto;
 import uo.ri.business.dto.VehicleTypeDto;
 import uo.ri.common.BusinessException;
+
+import java.util.List;
+import java.util.Optional;
 
 public class CourseCrudServiceImpl implements CourseCrudService {
 

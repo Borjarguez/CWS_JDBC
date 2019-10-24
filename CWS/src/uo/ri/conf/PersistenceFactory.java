@@ -1,17 +1,7 @@
 package uo.ri.conf;
 
-import uo.ri.persistence.CertificateGateway;
-import uo.ri.persistence.CourseAttendanceGateway;
-import uo.ri.persistence.CourseGateway;
-import uo.ri.persistence.InvoiceGateway;
-import uo.ri.persistence.MechanicGateway;
-import uo.ri.persistence.VehicleTypeGateway;
-import uo.ri.persistence.impl.CertificateGatewayImpl;
-import uo.ri.persistence.impl.CourseAttendanceGatewayImpl;
-import uo.ri.persistence.impl.CourseGatewayImpl;
-import uo.ri.persistence.impl.InvoiceGatewayImpl;
-import uo.ri.persistence.impl.MechanicGatewayImpl;
-import uo.ri.persistence.impl.VehicleTypeGatewayImpl;
+import uo.ri.persistence.*;
+import uo.ri.persistence.impl.*;
 
 public class PersistenceFactory {
 	
@@ -38,4 +28,10 @@ public class PersistenceFactory {
 	public static CourseAttendanceGateway getCourseAttendanceGateway() {
 		return new CourseAttendanceGatewayImpl();
 	}
+
+	public static WorkOrderGateway getWorkOrderGateway() {
+		return new WorkOrderGatewayImpl();
+	}
+
+    public static VehicleGateway getVehicleGateway() { return new VehicleGatewayImpl(); }
 }

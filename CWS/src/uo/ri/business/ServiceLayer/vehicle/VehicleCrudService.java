@@ -3,6 +3,8 @@ package uo.ri.business.ServiceLayer.vehicle;
 import uo.ri.business.dto.VehicleDto;
 import uo.ri.common.BusinessException;
 
+import java.util.Optional;
+
 /**
  * This service is intended to be used by the Foreman
  * It follows the ISP principle (@see SOLID principles from RC Martin)
@@ -15,6 +17,6 @@ public interface VehicleCrudService {
 	 * 
 	 * @throws BusinessException, DOES NOT 
 	 */
-	VehicleDto findVehicleByPlate(String plate) throws BusinessException;
+	Optional<VehicleDto> findVehicleByPlate(String plate) throws BusinessException;
 	
 }

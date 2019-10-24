@@ -1,8 +1,5 @@
 package uo.ri.ui.cashier.action;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import alb.util.console.Console;
 import alb.util.menu.Action;
 import uo.ri.business.ServiceLayer.invoice.InvoiceService;
@@ -10,6 +7,9 @@ import uo.ri.business.dto.InvoiceDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.ServiceFactory;
 import uo.ri.ui.util.Printer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class WorkOrderBillingAction implements Action {
 

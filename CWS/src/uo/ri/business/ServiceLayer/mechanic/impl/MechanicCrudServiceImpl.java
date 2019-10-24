@@ -1,14 +1,11 @@
 package uo.ri.business.ServiceLayer.mechanic.impl;
 
-import java.util.List;
-
 import uo.ri.business.ServiceLayer.mechanic.MechanicCrudService;
-import uo.ri.business.TransactionScripts.administrator.AddMechanic;
-import uo.ri.business.TransactionScripts.administrator.DeleteMechanic;
-import uo.ri.business.TransactionScripts.administrator.FindMechanicByID;
-import uo.ri.business.TransactionScripts.administrator.UpdateMechanic;
+import uo.ri.business.TransactionScripts.mechanic.*;
 import uo.ri.business.dto.MechanicDto;
 import uo.ri.common.BusinessException;
+
+import java.util.List;
 
 public class MechanicCrudServiceImpl implements MechanicCrudService {
 
@@ -38,8 +35,8 @@ public class MechanicCrudServiceImpl implements MechanicCrudService {
 
 	@Override
 	public List<MechanicDto> findAllMechanics() throws BusinessException {
-		// TODO Auto-generated method stub
-		return null;
+		FindAllMechanics fm = new FindAllMechanics();
+		return fm.execute();
 	}
 
 //	@Override

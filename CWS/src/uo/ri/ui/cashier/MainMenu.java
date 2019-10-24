@@ -3,9 +3,9 @@ package uo.ri.ui.cashier;
 
 import alb.util.menu.BaseMenu;
 import alb.util.menu.NotYetImplementedAction;
-import uo.ri.ui.cashier.action.WorkOrderBillingAction;
 import uo.ri.ui.cashier.action.PayOffInvoiceAction;
 import uo.ri.ui.cashier.action.UnchargedRepairsClientAction;
+import uo.ri.ui.cashier.action.WorkOrderBillingAction;
 
 public class MainMenu extends BaseMenu {
 

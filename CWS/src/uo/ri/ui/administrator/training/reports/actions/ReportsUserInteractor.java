@@ -1,7 +1,5 @@
 package uo.ri.ui.administrator.training.reports.actions;
 
-import java.util.List;
-
 import alb.util.console.Console;
 import uo.ri.business.ServiceLayer.training.CourseAttendanceService;
 import uo.ri.business.ServiceLayer.training.CourseCrudService;
@@ -10,6 +8,8 @@ import uo.ri.business.dto.VehicleTypeDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.ServiceFactory;
 import uo.ri.ui.util.Printer;
+
+import java.util.List;
 
 public class ReportsUserInteractor {
 

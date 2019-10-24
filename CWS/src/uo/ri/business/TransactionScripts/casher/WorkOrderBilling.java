@@ -1,10 +1,5 @@
 package uo.ri.business.TransactionScripts.casher;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.Date;
-import java.util.List;
-
 import alb.util.date.Dates;
 import alb.util.jdbc.Jdbc;
 import alb.util.math.Round;
@@ -12,6 +7,11 @@ import uo.ri.business.dto.InvoiceDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.PersistenceFactory;
 import uo.ri.persistence.InvoiceGateway;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.List;
 
 public class WorkOrderBilling {
 	private List<Long> workOrderIds;

@@ -1,11 +1,11 @@
 package uo.ri.business.ServiceLayer.training;
 
-import java.util.List;
-
 import uo.ri.business.dto.CertificateDto;
 import uo.ri.business.dto.TrainingForMechanicRow;
 import uo.ri.business.dto.TrainingHoursRow;
 import uo.ri.common.BusinessException;
+
+import java.util.List;
 
 /**
  * This service is intended to be used by the Manager

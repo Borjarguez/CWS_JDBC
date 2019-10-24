@@ -1,8 +1,7 @@
 package uo.ri.ui.administrator.training.attendance.actions;
 
-import java.util.List;
-
 import alb.util.console.Console;
+import uo.ri.business.ServiceLayer.mechanic.MechanicCrudService;
 import uo.ri.business.ServiceLayer.training.CourseAttendanceService;
 import uo.ri.business.dto.CourseDto;
 import uo.ri.business.dto.EnrollmentDto;
@@ -10,6 +9,8 @@ import uo.ri.business.dto.MechanicDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.ServiceFactory;
 import uo.ri.ui.util.Printer;
+
+import java.util.List;
 
 public class AttendanceUserInteractor {
 
@@ -26,12 +27,12 @@ public class AttendanceUserInteractor {
 
 	private void fillMechanicId(EnrollmentDto att) throws BusinessException {
 		showMechanics();
-		att.mechanicId = Console.readString("Mechanic id");
+		att.mechanicId = Console.readLong("Mechanic id");
 	}
 
 	private void fillCourseId(EnrollmentDto att) throws BusinessException {
 		showCourses();
-		att.courseId = Console.readString("Course id");
+		att.courseId = Console.readLong("Course id");
 	}
 
 	private void fillPassed(EnrollmentDto att) {
@@ -39,8 +40,8 @@ public class AttendanceUserInteractor {
 	}
 
 	private void showMechanics() throws BusinessException {
-		CourseAttendanceService cs = ServiceFactory.getCourseAttendanceService();
-		List<MechanicDto> mechanics = cs.findAllActiveMechanics();
+		MechanicCrudService cs = ServiceFactory.getMechanicCrudService();
+		List<MechanicDto> mechanics = cs.findAllMechanics();
 		Console.println("List of mechanics");
 		mechanics.forEach((m) -> Printer.printMechanic(m) );
 	}

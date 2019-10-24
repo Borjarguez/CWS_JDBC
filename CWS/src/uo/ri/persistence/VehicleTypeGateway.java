@@ -1,9 +1,9 @@
 package uo.ri.persistence;
 
+import uo.ri.business.dto.VehicleTypeDto;
+
 import java.sql.Connection;
 import java.util.List;
-
-import uo.ri.business.dto.VehicleTypeDto;
 
 public interface VehicleTypeGateway {
 

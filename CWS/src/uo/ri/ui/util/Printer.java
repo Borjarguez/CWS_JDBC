@@ -1,23 +1,9 @@
 package uo.ri.ui.util;
 
-import java.util.List;
-
 import alb.util.console.Console;
-import uo.ri.business.dto.BreakdownDto;
-import uo.ri.business.dto.CertificateDto;
-import uo.ri.business.dto.ContractCategoryDto;
-import uo.ri.business.dto.ContractDto;
-import uo.ri.business.dto.ContractTypeDto;
-import uo.ri.business.dto.CourseDto;
-import uo.ri.business.dto.EnrollmentDto;
-import uo.ri.business.dto.InvoiceDto;
-import uo.ri.business.dto.MechanicDto;
-import uo.ri.business.dto.PaymentMeanDto;
-import uo.ri.business.dto.PayrollDto;
-import uo.ri.business.dto.TrainingForMechanicRow;
-import uo.ri.business.dto.TrainingHoursRow;
-import uo.ri.business.dto.VehicleTypeDto;
-import uo.ri.business.dto.WorkOrderDto;
+import uo.ri.business.dto.*;
+
+import java.util.List;
 
 public class Printer {
 
@@ -210,6 +196,36 @@ public class Printer {
 				, m.name
 				, m.surname
 			);
+	}
+	public static void printCertifiedMechanic(CertificateDto c) {
+
+		Console.printf("%d\t%-10.10s %-25.25s %-25.25s\n",
+				c.mechanic.id
+				, c.mechanic.dni
+				, c.mechanic.name
+				, c.vehicleType.name
+		);
+	}
+
+	public static void printWorkOrderDetail(WorkOrderDto wo) {
+
+		Console.printf("%d for vehicle %s\n\t%-25.25s\n\t%tm/%<td/%<tY\n\t%s\n",
+				wo.id
+				, wo.vehicleId
+				, wo.description
+				, wo.date
+				, wo.status
+		);
+	}
+
+	public static void printVehicleDetail(VehicleDto v) {
+
+		Console.printf("%d\t%-8.8s\t%s\t%s\n",
+				v.id
+				, v.plate
+				, v.make
+				, v.model
+		);
 	}
 
 }

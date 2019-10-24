@@ -4,7 +4,10 @@ import alb.util.jdbc.Jdbc;
 import uo.ri.conf.Conf;
 import uo.ri.persistence.CertificateGateway;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Calendar;
 
 public class CertificateGatewayImpl implements CertificateGateway{
