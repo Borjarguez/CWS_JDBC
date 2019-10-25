@@ -16,7 +16,6 @@ public class UnchargedRepairsClientAction implements Action {
 	 */
 	@Override
 	public void execute() throws BusinessException {
-		// TODO ...
 	}
 
 }

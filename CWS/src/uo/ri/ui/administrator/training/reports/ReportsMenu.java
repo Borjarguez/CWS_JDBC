@@ -1,6 +1,7 @@
 package uo.ri.ui.administrator.training.reports;
 
 import alb.util.menu.BaseMenu;
+import alb.util.menu.NotYetImplementedAction;
 import uo.ri.ui.administrator.training.reports.actions.ListCertificationsByVehicleTypeAction;
 import uo.ri.ui.administrator.training.reports.actions.ListTrainingByVehicleTypeAction;
 import uo.ri.ui.administrator.training.reports.actions.ListTrainingOfMechanicAction;
@@ -14,9 +15,9 @@ public class ReportsMenu extends BaseMenu {
 			{ "Training of a mechanic",
 					ListTrainingOfMechanicAction.class },
 			{ "Training by vehicle types",
-					ListTrainingByVehicleTypeAction.class },
+					NotYetImplementedAction.class },
 			{ "Certifications by vehicle type",
-					ListCertificationsByVehicleTypeAction.class } 
+					NotYetImplementedAction.class }
 		};
 	}
 

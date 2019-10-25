@@ -10,30 +10,29 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class AddMechanic {
-	private MechanicDto m;
+    private MechanicDto m;
 
-	public AddMechanic(MechanicDto m) {
-		this.m = m;
-	}
+    public AddMechanic(MechanicDto m) {
+        this.m = m;
+    }
 
-	public void execute() throws BusinessException {
-		try (Connection c = Jdbc.getConnection()) {
-			c.setAutoCommit(false);
-			MechanicGateway mg = PersistenceFactory.getMechanicGateway();
-			mg.setConnection(c);
+    public void execute() throws BusinessException {
+        try (Connection c = Jdbc.getConnection()) {
+            c.setAutoCommit(false);
+            MechanicGateway mg = PersistenceFactory.getMechanicGateway();
+            mg.setConnection(c);
 
-			// Security check for a mechanic
+            // Security check for a mechanic
 
-			if (mg.findByDNI(m.dni) != null) {
-				c.rollback();
-				throw new BusinessException("Mechanic already exists");
-			}
+            if (mg.findByDNI(m.dni) != null) {
+                c.rollback();
+                throw new BusinessException("Mechanic already exists");
+            }
+            //////////////////////////////////////
+            mg.add(m);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error de conexion");
+        }
 
-			//////////////////////////////////////
-			mg.add(m);
-		} catch (SQLException e) {
-			throw new RuntimeException("Error de conexion");
-		}
-
-	}
+    }
 }

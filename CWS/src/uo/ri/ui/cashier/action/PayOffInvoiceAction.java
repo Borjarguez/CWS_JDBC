@@ -23,7 +23,6 @@ public class PayOffInvoiceAction implements Action {
 	 */
 	@Override
 	public void execute() throws BusinessException {
-		// TODO ...
 	}
 
 }

@@ -34,4 +34,6 @@ public class PersistenceFactory {
 	}
 
     public static VehicleGateway getVehicleGateway() { return new VehicleGatewayImpl(); }
+
+	public static DedicationGateway getDedicationsGateway() { return new DedicationGatewayImpl(); }
 }

@@ -17,10 +17,10 @@ public class CourseDto {
 
 	/**
 	 * A map of the form:
-	 * 	Vehicle type id -> percentage
-	 * 	 2423 -> 25%
-	 * 	 4232-346-tyc -> 25%
-	 * 	 5445 -> 50%
+	 * 	Vehicle type id > percentage
+	 * 	 2423 > 25%
+	 * 	 4232-346-tyc > 25%
+	 * 	 5445 > 50%
 	 */
 	public Map<Long, Integer> percentages = new HashMap<>();
 }

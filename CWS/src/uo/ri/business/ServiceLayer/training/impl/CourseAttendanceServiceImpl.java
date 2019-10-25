@@ -5,6 +5,7 @@ import uo.ri.business.TransactionScripts.courseAttendance.AddAttendance;
 import uo.ri.business.TransactionScripts.courseAttendance.DeleteAttendance;
 import uo.ri.business.TransactionScripts.courseAttendance.FindAllActiveCourses;
 import uo.ri.business.TransactionScripts.courseAttendance.FindAttendanceByCourseId;
+import uo.ri.business.TransactionScripts.mechanic.FindAllMechanics;
 import uo.ri.business.dto.CourseDto;
 import uo.ri.business.dto.EnrollmentDto;
 import uo.ri.business.dto.MechanicDto;
@@ -40,8 +41,8 @@ public class CourseAttendanceServiceImpl implements CourseAttendanceService {
 
     @Override
     public List<MechanicDto> findAllActiveMechanics() throws BusinessException {
-        // TODO Auto-generated method stub
-        return null;
+        FindAllMechanics fm = new FindAllMechanics();
+        return fm.execute();
     }
 
 

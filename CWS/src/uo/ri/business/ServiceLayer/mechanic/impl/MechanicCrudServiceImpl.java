@@ -39,10 +39,4 @@ public class MechanicCrudServiceImpl implements MechanicCrudService {
 		return fm.execute();
 	}
 
-//	@Override
-//	public List<MechanicDto> findActiveMechanics() throws BusinessException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
 }

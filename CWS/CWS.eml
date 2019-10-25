@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="hsqldb.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/CWS/lib/hsqldb.jar!/"/>
+	</lib>
+	<lib name="ojdbc6.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/CWS/lib/ojdbc6.jar!/"/>
+	</lib>
+</component>

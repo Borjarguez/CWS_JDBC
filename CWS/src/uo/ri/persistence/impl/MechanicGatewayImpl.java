@@ -1,8 +1,11 @@
 package uo.ri.persistence.impl;
 
+import com.sun.corba.se.impl.encoding.WrapperInputStream;
 import uo.ri.business.dto.MechanicDto;
+import uo.ri.business.dto.TrainingForMechanicRow;
 import uo.ri.conf.Conf;
-import uo.ri.persistence.MechanicGateway;
+import uo.ri.conf.PersistenceFactory;
+import uo.ri.persistence.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -160,6 +163,45 @@ public class MechanicGatewayImpl implements MechanicGateway {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public List<TrainingForMechanicRow> findTrainingForMechanic(Long mechanic_id) {
+        List<TrainingForMechanicRow> list = new ArrayList<TrainingForMechanicRow>();
+        CourseAttendanceGateway cg = PersistenceFactory.getCourseAttendanceGateway();
+        CourseGateway cgg = PersistenceFactory.getCourseGateway();
+        VehicleTypeGateway vg = PersistenceFactory.getVehicleTypeGateway();
+
+        cg.setConnection(c);
+        cgg.setConnection(c);
+        vg.setConnection(c);
+
+        String SQL = Conf.getInstance().getProperty("SQL_FIND_TRAINING_MECHANIC");
+        PreparedStatement pst;
+        ResultSet rs;
+
+        try {
+            pst = c.prepareStatement(SQL);
+            pst.setLong(1, mechanic_id);
+            rs = pst.executeQuery();
+
+            TrainingForMechanicRow nt;
+            while (rs.next()) {
+                nt = new TrainingForMechanicRow();
+
+                list.add(nt);
+            }
+
+            return list;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void pene(){
+        // Saco las horas totales de los cursos del mecanico
+
     }
 
 }
