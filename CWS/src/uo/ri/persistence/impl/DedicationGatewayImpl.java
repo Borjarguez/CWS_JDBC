@@ -1,15 +1,12 @@
 package uo.ri.persistence.impl;
 
-import uo.ri.common.BusinessException;
-import uo.ri.conf.Conf;
-import uo.ri.persistence.DedicationGateway;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.Map;
+
+import uo.ri.conf.Conf;
+import uo.ri.persistence.DedicationGateway;
 
 public class DedicationGatewayImpl implements DedicationGateway {
     private Connection c;

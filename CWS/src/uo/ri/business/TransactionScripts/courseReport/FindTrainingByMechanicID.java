@@ -1,5 +1,10 @@
 package uo.ri.business.TransactionScripts.courseReport;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.CourseDto;
 import uo.ri.business.dto.TrainingForMechanicRow;
@@ -7,11 +12,6 @@ import uo.ri.conf.PersistenceFactory;
 import uo.ri.persistence.CourseAttendanceGateway;
 import uo.ri.persistence.CourseGateway;
 import uo.ri.persistence.VehicleTypeGateway;
-
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class FindTrainingByMechanicID {
     private Long mechanic_id;
@@ -70,18 +70,6 @@ public class FindTrainingByMechanicID {
         return null;
     }
 
-    private int getAttendanceForMechanic(Long mechanic_id, Long vehicleType_id) {
-        try (Connection c = Jdbc.getConnection()) {
-            c.setAutoCommit(false);
-            CourseAttendanceGateway vg = PersistenceFactory.getCourseAttendanceGateway();
-            vg.setConnection(c);
-            return vg.findAttendanceForMechanic(mechanic_id, vehicleType_id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
     private int getDedicationForVehicleType(Long course_id, Long vehicleType_id) {
         try (Connection c = Jdbc.getConnection()) {
             c.setAutoCommit(false);
@@ -118,32 +106,4 @@ public class FindTrainingByMechanicID {
         return 0;
     }
 
-    private int getCourseHours(Long id) {
-        try (Connection c = Jdbc.getConnection()) {
-            c.setAutoCommit(false);
-            CourseGateway mg = PersistenceFactory.getCourseGateway();
-            mg.setConnection(c);
-            return mg.findCourseHours(id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    /**
-     * Method which finds the mechanics list of courses
-     *
-     * @return the courses' list
-     */
-    private List<Long> getMechanicCoursesHours() {
-        try (Connection c = Jdbc.getConnection()) {
-            c.setAutoCommit(false);
-            CourseGateway mg = PersistenceFactory.getCourseGateway();
-            mg.setConnection(c);
-            return mg.findCoursesByMechanicID(mechanic_id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 }

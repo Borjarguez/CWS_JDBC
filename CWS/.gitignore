@@ -1,6 +1,4 @@
 /.metadata/
 /.idea/
 /AlbUtil/
-/bin/
-
-*.class
+/.class

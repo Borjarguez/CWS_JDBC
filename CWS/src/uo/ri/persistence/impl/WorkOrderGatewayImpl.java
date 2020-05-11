@@ -1,13 +1,14 @@
 package uo.ri.persistence.impl;
 
-import com.sun.corba.se.spi.orbutil.threadpool.Work;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+
 import uo.ri.business.dto.WorkOrderDto;
 import uo.ri.conf.Conf;
-import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.VehicleGateway;
 import uo.ri.persistence.WorkOrderGateway;
-
-import java.sql.*;
 
 public class WorkOrderGatewayImpl implements WorkOrderGateway {
     private Connection c;
@@ -107,7 +108,6 @@ public class WorkOrderGatewayImpl implements WorkOrderGateway {
 
     @Override
     public boolean findInterventions(Long workOrder_id) {
-        WorkOrderDto v;
         ResultSet rs;
         String SQL = Conf.getInstance().getProperty("SQL_FIND_WORKORDER_INTERVENTIONS");
 

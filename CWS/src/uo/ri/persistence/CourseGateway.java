@@ -1,10 +1,9 @@
 package uo.ri.persistence;
 
-import uo.ri.business.dto.CourseDto;
-
 import java.sql.Connection;
-import java.util.HashMap;
 import java.util.List;
+
+import uo.ri.business.dto.CourseDto;
 
 public interface CourseGateway {
 

@@ -1,15 +1,14 @@
 package uo.ri.business.TransactionScripts.course;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
 import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.CourseDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.PersistenceFactory;
 import uo.ri.persistence.CourseGateway;
-import uo.ri.persistence.MechanicGateway;
-
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.List;
 
 public class FindAllCourses {
 

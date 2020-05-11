@@ -1,14 +1,13 @@
 package uo.ri.business.TransactionScripts.vehicle;
 
-import alb.util.jdbc.Jdbc;
-import uo.ri.business.dto.VehicleDto;
-import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.MechanicGateway;
-import uo.ri.persistence.VehicleGateway;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Optional;
+
+import alb.util.jdbc.Jdbc;
+import uo.ri.business.dto.VehicleDto;
+import uo.ri.conf.PersistenceFactory;
+import uo.ri.persistence.VehicleGateway;
 
 public class FindVehicleByPlate {
     private String plate;
