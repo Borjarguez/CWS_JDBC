@@ -4,7 +4,7 @@ import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.VehicleTypeDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.VehicleTypeGateway;
+import uo.ri.persistence.vehicleType.VehicleTypeGateway;
 
 import java.sql.Connection;
 import java.sql.SQLException;

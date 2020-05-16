@@ -1,8 +1,8 @@
-package uo.ri.persistence.impl;
+package uo.ri.persistence.vehicle.impl;
 
 import uo.ri.business.dto.VehicleDto;
 import uo.ri.conf.Conf;
-import uo.ri.persistence.VehicleGateway;
+import uo.ri.persistence.vehicle.VehicleGateway;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

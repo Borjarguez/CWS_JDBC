@@ -1,8 +1,8 @@
-package uo.ri.persistence.impl;
+package uo.ri.persistence.certificate.impl;
 
 import alb.util.jdbc.Jdbc;
 import uo.ri.conf.Conf;
-import uo.ri.persistence.CertificateGateway;
+import uo.ri.persistence.certificate.CertificateGateway;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

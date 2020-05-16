@@ -7,7 +7,7 @@ import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.CourseDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.CourseGateway;
+import uo.ri.persistence.course.CourseGateway;
 
 public class UpdateCourse {
     private CourseDto dto;
@@ -22,7 +22,6 @@ public class UpdateCourse {
             CourseGateway cg = PersistenceFactory.getCourseGateway();
             cg.setConnection(c);
 
-            // Security checks
             if(cg.findCourseByID(dto.id) == null){
                 c.rollback();
                 throw new BusinessException("Course doesn't exist");
@@ -32,7 +31,6 @@ public class UpdateCourse {
                 c.rollback();
                 throw new BusinessException("Course has been imparted at any time");
             }
-            ////////////////////////////////////////////////////////
 
             cg.update(dto);
         } catch (SQLException e) {

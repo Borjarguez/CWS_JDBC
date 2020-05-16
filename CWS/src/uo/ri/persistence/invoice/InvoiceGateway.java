@@ -1,4 +1,4 @@
-package uo.ri.persistence;
+package uo.ri.persistence.invoice;
 
 import uo.ri.business.dto.InvoiceDto;
 import uo.ri.common.BusinessException;

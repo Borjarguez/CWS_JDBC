@@ -1,10 +1,10 @@
-package uo.ri.persistence.impl;
+package uo.ri.persistence.invoice.impl;
 
 import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.InvoiceDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.Conf;
-import uo.ri.persistence.InvoiceGateway;
+import uo.ri.persistence.invoice.InvoiceGateway;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

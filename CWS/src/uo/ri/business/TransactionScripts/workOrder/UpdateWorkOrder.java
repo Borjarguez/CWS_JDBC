@@ -4,7 +4,7 @@ import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.WorkOrderDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.WorkOrderGateway;
+import uo.ri.persistence.workOrder.WorkOrderGateway;
 
 import java.sql.Connection;
 import java.sql.SQLException;

@@ -1,4 +1,4 @@
-package uo.ri.persistence;
+package uo.ri.persistence.vehicleType;
 
 import uo.ri.business.dto.VehicleTypeDto;
 

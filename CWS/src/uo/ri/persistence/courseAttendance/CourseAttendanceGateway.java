@@ -1,4 +1,4 @@
-package uo.ri.persistence;
+package uo.ri.persistence.courseAttendance;
 
 import uo.ri.business.dto.EnrollmentDto;
 

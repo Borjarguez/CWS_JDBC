@@ -1,4 +1,4 @@
-package uo.ri.persistence;
+package uo.ri.persistence.workOrder;
 
 import uo.ri.business.dto.WorkOrderDto;
 

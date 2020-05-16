@@ -1,4 +1,4 @@
-package uo.ri.persistence.impl;
+package uo.ri.persistence.workOrder.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 
 import uo.ri.business.dto.WorkOrderDto;
 import uo.ri.conf.Conf;
-import uo.ri.persistence.WorkOrderGateway;
+import uo.ri.persistence.workOrder.WorkOrderGateway;
 
 public class WorkOrderGatewayImpl implements WorkOrderGateway {
     private Connection c;

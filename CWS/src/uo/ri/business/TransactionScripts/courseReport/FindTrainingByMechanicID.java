@@ -9,9 +9,9 @@ import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.CourseDto;
 import uo.ri.business.dto.TrainingForMechanicRow;
 import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.CourseAttendanceGateway;
-import uo.ri.persistence.CourseGateway;
-import uo.ri.persistence.VehicleTypeGateway;
+import uo.ri.persistence.course.CourseGateway;
+import uo.ri.persistence.courseAttendance.CourseAttendanceGateway;
+import uo.ri.persistence.vehicleType.VehicleTypeGateway;
 
 public class FindTrainingByMechanicID {
     private Long mechanic_id;

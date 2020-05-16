@@ -1,4 +1,4 @@
-package uo.ri.persistence.impl;
+package uo.ri.persistence.mechanic.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,10 +11,10 @@ import uo.ri.business.dto.MechanicDto;
 import uo.ri.business.dto.TrainingForMechanicRow;
 import uo.ri.conf.Conf;
 import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.CourseAttendanceGateway;
-import uo.ri.persistence.CourseGateway;
-import uo.ri.persistence.MechanicGateway;
-import uo.ri.persistence.VehicleTypeGateway;
+import uo.ri.persistence.course.CourseGateway;
+import uo.ri.persistence.courseAttendance.CourseAttendanceGateway;
+import uo.ri.persistence.mechanic.MechanicGateway;
+import uo.ri.persistence.vehicleType.VehicleTypeGateway;
 
 public class MechanicGatewayImpl implements MechanicGateway {
 	private Connection c;

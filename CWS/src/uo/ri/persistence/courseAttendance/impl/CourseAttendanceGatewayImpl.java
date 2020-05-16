@@ -1,10 +1,10 @@
-package uo.ri.persistence.impl;
+package uo.ri.persistence.courseAttendance.impl;
 
 import uo.ri.business.dto.EnrollmentDto;
 import uo.ri.conf.Conf;
 import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.CourseAttendanceGateway;
-import uo.ri.persistence.MechanicGateway;
+import uo.ri.persistence.courseAttendance.CourseAttendanceGateway;
+import uo.ri.persistence.mechanic.MechanicGateway;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

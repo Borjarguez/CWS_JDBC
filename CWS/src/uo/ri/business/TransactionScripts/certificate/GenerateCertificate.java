@@ -1,15 +1,19 @@
 package uo.ri.business.TransactionScripts.certificate;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
 import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.MechanicDto;
 import uo.ri.business.dto.VehicleTypeDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.*;
-
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.List;
+import uo.ri.persistence.certificate.CertificateGateway;
+import uo.ri.persistence.course.CourseGateway;
+import uo.ri.persistence.courseAttendance.CourseAttendanceGateway;
+import uo.ri.persistence.mechanic.MechanicGateway;
+import uo.ri.persistence.vehicleType.VehicleTypeGateway;
 
 public class GenerateCertificate {
 	private CourseGateway cgt = PersistenceFactory.getCourseGateway();

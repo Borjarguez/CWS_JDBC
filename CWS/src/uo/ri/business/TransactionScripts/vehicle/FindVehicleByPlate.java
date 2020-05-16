@@ -7,7 +7,7 @@ import java.util.Optional;
 import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.VehicleDto;
 import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.VehicleGateway;
+import uo.ri.persistence.vehicle.VehicleGateway;
 
 public class FindVehicleByPlate {
     private String plate;

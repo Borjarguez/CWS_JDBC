@@ -4,7 +4,7 @@ import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.MechanicDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.MechanicGateway;
+import uo.ri.persistence.mechanic.MechanicGateway;
 
 import java.sql.Connection;
 import java.sql.SQLException;

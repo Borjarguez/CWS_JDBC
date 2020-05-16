@@ -1,4 +1,4 @@
-package uo.ri.persistence;
+package uo.ri.persistence.certificate;
 
 import java.sql.Connection;
 

@@ -4,9 +4,9 @@ import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.EnrollmentDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.CourseAttendanceGateway;
-import uo.ri.persistence.CourseGateway;
-import uo.ri.persistence.MechanicGateway;
+import uo.ri.persistence.course.CourseGateway;
+import uo.ri.persistence.courseAttendance.CourseAttendanceGateway;
+import uo.ri.persistence.mechanic.MechanicGateway;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -59,9 +59,9 @@ public class AddAttendance {
             ///////////////////////////////////////////////////////////////////
 
             cag.add(dto);
+            c.commit();
             dto.id = cag.findLastAttendance();
 
-            c.commit();
             return dto;
         } catch (SQLException e) {
             e.printStackTrace();

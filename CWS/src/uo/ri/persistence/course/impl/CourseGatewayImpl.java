@@ -1,8 +1,8 @@
-package uo.ri.persistence.impl;
+package uo.ri.persistence.course.impl;
 
 import uo.ri.business.dto.CourseDto;
 import uo.ri.conf.Conf;
-import uo.ri.persistence.CourseGateway;
+import uo.ri.persistence.course.CourseGateway;
 
 import java.sql.*;
 import java.util.ArrayList;

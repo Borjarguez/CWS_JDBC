@@ -4,8 +4,8 @@ import alb.util.jdbc.Jdbc;
 import uo.ri.business.dto.EnrollmentDto;
 import uo.ri.common.BusinessException;
 import uo.ri.conf.PersistenceFactory;
-import uo.ri.persistence.CourseAttendanceGateway;
-import uo.ri.persistence.CourseGateway;
+import uo.ri.persistence.course.CourseGateway;
+import uo.ri.persistence.courseAttendance.CourseAttendanceGateway;
 
 import java.sql.Connection;
 import java.sql.SQLException;

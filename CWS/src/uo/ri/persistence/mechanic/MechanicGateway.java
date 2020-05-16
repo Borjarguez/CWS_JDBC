@@ -1,4 +1,4 @@
-package uo.ri.persistence;
+package uo.ri.persistence.mechanic;
 
 import uo.ri.business.dto.MechanicDto;
 import uo.ri.business.dto.TrainingForMechanicRow;

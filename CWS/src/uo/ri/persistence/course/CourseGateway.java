@@ -1,4 +1,4 @@
-package uo.ri.persistence;
+package uo.ri.persistence.course;
 
 import java.sql.Connection;
 import java.util.List;
@@ -89,6 +89,11 @@ public interface CourseGateway {
      */
     int findDedicationByCourseID(long course_id);
 
+    /**
+     * Method which finds the courses related with the vehicle type 
+     * @param vehicleType_id, the vehicle type
+     * @return a list with the courses
+     */
     List<CourseDto> findCoursesForVehicleType(Long vehicleType_id);
     
     /**
