@@ -104,16 +104,10 @@ public interface CourseGateway {
     CourseDto findLastCourse();
 
     /**
-     * Method which finds
-     * @param mechanic_id
-     * @return
+     * Method which finds the course by its code
+     * @param the course's code 
+     * @return true if it exists
      */
-    boolean findCourseByCode(String code);
+    boolean existCourseByCode(String code);
 
-    /**
-     * Method which finds
-     * @param mechanic_id
-     * @return
-     */
-    boolean hasBeenImparted(Long id);
 }

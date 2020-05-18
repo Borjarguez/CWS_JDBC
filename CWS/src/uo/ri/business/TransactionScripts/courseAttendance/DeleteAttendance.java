@@ -21,12 +21,11 @@ public class DeleteAttendance {
             CourseAttendanceGateway cag = PersistenceFactory.getCourseAttendanceGateway();
             cag.setConnection(c);
 
-            /////////////// Security checks ///////////////////////////////////
             if(cag.findByID(attendance_id) == null){
                 c.rollback();
                 throw new BusinessException("Attendance doesn't exist");
             }
-            ///////////////////////////////////////////////////////////////////
+            
             cag.delete(attendance_id);
             c.commit();
         } catch (SQLException e) {

@@ -1,6 +1,9 @@
 package uo.ri.persistence.certificate;
 
 import java.sql.Connection;
+import java.util.List;
+
+import uo.ri.business.dto.CertificateDto;
 
 public interface CertificateGateway {
 	
@@ -24,5 +27,11 @@ public interface CertificateGateway {
 	 * @return
 	 */
 	boolean doesCertificateExist(Long idMechanic, Long idVehicle);
+
+	/**
+	 * Method which finds certificates ordered by vehicle type
+	 * @return
+	 */
+	List<CertificateDto> findAllOrdered();
 
 }

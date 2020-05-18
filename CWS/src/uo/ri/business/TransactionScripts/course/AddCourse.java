@@ -34,7 +34,7 @@ public class AddCourse {
 			CourseGateway mg = PersistenceFactory.getCourseGateway();
 			mg.setConnection(c);
 
-			if (mg.findCourseByCode(dto.code)) {
+			if (mg.existCourseByCode(dto.code)) {
 				c.rollback();
 				throw new BusinessException("Course already exists");
 			}

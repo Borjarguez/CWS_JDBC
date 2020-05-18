@@ -1,6 +1,7 @@
 package uo.ri.persistence.dedication;
 
 import java.sql.Connection;
+import java.util.List;
 
 public interface DedicationGateway {
 	
@@ -29,4 +30,12 @@ public interface DedicationGateway {
      * @param course_id
      */
 	void deleteByCourseID(Long course_id);
+
+	/**
+	 * Method which finds the courses's IDs
+	 * @param mechanicID, the mechanic ID
+	 * @param vehicleTypeID, the vehicle type ID
+	 * @return the list
+	 */
+	List<Long> findCoursesByMechanicVehicleType(Long mechanicID, Long vehicleTypeID);
 }

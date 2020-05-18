@@ -10,12 +10,9 @@ public class ReportsMenu extends BaseMenu {
 		menuOptions = new Object[][] {
 			{ "Manager > Training management > Reports", null },
 
-			{ "Training of a mechanic",
-					ListTrainingOfMechanicAction.class },
-			{ "Training by vehicle types",
-					NotYetImplementedAction.class },
-			{ "Certifications by vehicle type",
-					NotYetImplementedAction.class }
+			{ "Training of a mechanic",			ListTrainingOfMechanicAction.class },
+			{ "Training by vehicle types",		NotYetImplementedAction.class },
+			{ "Certifications by vehicle type",	NotYetImplementedAction.class }
 		};
 	}
 

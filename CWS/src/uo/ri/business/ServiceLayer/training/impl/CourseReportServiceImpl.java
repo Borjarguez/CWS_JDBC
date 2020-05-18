@@ -1,13 +1,15 @@
 package uo.ri.business.ServiceLayer.training.impl;
 
+import java.util.List;
+
 import uo.ri.business.ServiceLayer.training.CourseReportService;
+import uo.ri.business.TransactionScripts.courseReport.FindCertificatedByVehicleType;
 import uo.ri.business.TransactionScripts.courseReport.FindTrainingByMechanicID;
+import uo.ri.business.TransactionScripts.courseReport.FindTrainingByVehicleTypeAndMechanic;
 import uo.ri.business.dto.CertificateDto;
 import uo.ri.business.dto.TrainingForMechanicRow;
 import uo.ri.business.dto.TrainingHoursRow;
 import uo.ri.common.BusinessException;
-
-import java.util.List;
 
 public class CourseReportServiceImpl implements CourseReportService {
 
@@ -19,12 +21,14 @@ public class CourseReportServiceImpl implements CourseReportService {
 
 	@Override
 	public List<TrainingHoursRow> findTrainingByVehicleTypeAndMechanic() throws BusinessException {
-		return null;
+		FindTrainingByVehicleTypeAndMechanic fin = new FindTrainingByVehicleTypeAndMechanic();
+		return fin.execute();
 	}
 
 	@Override
 	public List<CertificateDto> findCertificatedByVehicleType() throws BusinessException {
-		return null;
+		FindCertificatedByVehicleType ce = new FindCertificatedByVehicleType();
+		return ce.execute();
 	}
 
 }

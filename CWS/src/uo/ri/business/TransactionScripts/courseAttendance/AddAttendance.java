@@ -61,7 +61,7 @@ public class AddAttendance {
             cag.add(dto);
             c.commit();
             dto.id = cag.findLastAttendance();
-
+            
             return dto;
         } catch (SQLException e) {
             e.printStackTrace();
