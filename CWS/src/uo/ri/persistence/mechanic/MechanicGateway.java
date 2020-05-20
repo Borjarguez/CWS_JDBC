@@ -1,10 +1,10 @@
 package uo.ri.persistence.mechanic;
 
-import uo.ri.business.dto.MechanicDto;
-import uo.ri.business.dto.TrainingForMechanicRow;
-
 import java.sql.Connection;
 import java.util.List;
+
+import uo.ri.business.dto.MechanicDto;
+import uo.ri.business.dto.TrainingForMechanicRow;
 
 public interface MechanicGateway {
 	
@@ -64,4 +64,5 @@ public interface MechanicGateway {
 	 * @return
 	 */
     List<TrainingForMechanicRow> findTrainingForMechanic(Long mechanic_id);
+
 }

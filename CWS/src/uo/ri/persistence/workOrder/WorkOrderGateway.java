@@ -3,6 +3,7 @@ package uo.ri.persistence.workOrder;
 import uo.ri.business.dto.WorkOrderDto;
 
 import java.sql.Connection;
+import java.util.List;
 
 public interface WorkOrderGateway {
 	
@@ -49,4 +50,17 @@ public interface WorkOrderGateway {
      * @return true if it has interventions, false in other case
      */
     boolean findInterventions(Long workOrder_id);
+
+    /**
+     * Method which searches for the unfinished work orders
+     * @return
+     */
+	List<WorkOrderDto> findUnFinishedWorkOrders();
+
+	/**
+	 * Method which searches for work orders
+	 * @param id
+	 * @return
+	 */
+	List<WorkOrderDto> findWorkOrdersByVehicleId(Long id);
 }

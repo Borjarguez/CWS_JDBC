@@ -1,16 +1,18 @@
 package uo.ri.business.ServiceLayer.workOrder.impl;
 
+import java.util.List;
+import java.util.Optional;
+
 import uo.ri.business.ServiceLayer.workOrder.WorkOrderService;
 import uo.ri.business.TransactionScripts.workOrder.AddWorkOrder;
 import uo.ri.business.TransactionScripts.workOrder.DeleteWorkOrder;
+import uo.ri.business.TransactionScripts.workOrder.FindCertificatesByVehicleTypeId;
+import uo.ri.business.TransactionScripts.workOrder.FindUnFinishedWorkOrders;
 import uo.ri.business.TransactionScripts.workOrder.FindWorkOrderByID;
 import uo.ri.business.TransactionScripts.workOrder.UpdateWorkOrder;
 import uo.ri.business.dto.CertificateDto;
 import uo.ri.business.dto.WorkOrderDto;
 import uo.ri.common.BusinessException;
-
-import java.util.List;
-import java.util.Optional;
 
 public class WorkOrderServiceImpl implements WorkOrderService {
     @Override
@@ -39,7 +41,8 @@ public class WorkOrderServiceImpl implements WorkOrderService {
 
     @Override
     public List<WorkOrderDto> findUnfinishedWorkOrders() throws BusinessException {
-        return null;
+    	FindUnFinishedWorkOrders f = new FindUnFinishedWorkOrders();
+		return f.execute();
     }
 
     @Override
@@ -54,7 +57,8 @@ public class WorkOrderServiceImpl implements WorkOrderService {
 
     @Override
     public List<CertificateDto> findCertificatesByVehicleTypeId(Long id) throws BusinessException {
-        return null;
+    	FindCertificatesByVehicleTypeId find = new FindCertificatesByVehicleTypeId(id);
+		return find.execute();
     }
 
     @Override

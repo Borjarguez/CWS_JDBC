@@ -19,4 +19,12 @@ public interface VehicleCrudService {
 	 */
 	Optional<VehicleDto> findVehicleByPlate(String plate) throws BusinessException;
 	
+	/**
+	 * 
+	 * @param id, the vehicle id
+	 * @return the vehicle dto
+	 * @throws BusinessException
+	 */
+	VehicleDto findVehicleById(Long id) throws BusinessException;
+	
 }

@@ -34,4 +34,12 @@ public interface CertificateGateway {
 	 */
 	List<CertificateDto> findAllOrdered();
 
+
+    /**
+     * Method which searches for the certificates
+     * @param id, the vehicle type id
+     * @return the list of certificates
+     */
+	List<CertificateDto> findCertificatesByVehicleTypeId(Long id);
+
 }
